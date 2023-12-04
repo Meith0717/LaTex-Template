@@ -36,9 +36,15 @@ jobs:
         with:
           name: PDF
 
+      - name: Set release tag
+        run: |
+          latestTag=$(git tag -l 'v*' | sed 's/^v//' | sort -nr | head -n 1)
+          newTag="v$((latestTag + 1))"
+          echo "RELEASE_TAG=$newTag" >> $GITHUB_ENV
+
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
-          tag_name: PDF
+          tag_name: ${{ env.RELEASE_TAG }}
