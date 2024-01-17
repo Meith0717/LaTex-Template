@@ -5,8 +5,9 @@ This repository contains a simple LaTeX template with a single `main.tex` file. 
 ## Usage
 
 1. Clone or download the repository.
-2. Edit the `main.tex` file with your content.
-3. Each commit automatically triggers a build and release process, making the latest version accessible.
+2. Go to the repository Settings &rarr Actions &rarr General Workflow permissions and set it to Read and write permissions
+3. Edit the `main.tex` file with your content.
+4. Each commit automatically triggers a build and release process, making the latest version accessible.
 
 ## Directory Structure
 
